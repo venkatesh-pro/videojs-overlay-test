@@ -7,7 +7,7 @@ import "videojs-overlay";
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null);
   const playerRef = React.useRef(null);
-  const { options, onReady } = props;
+  const { options } = props;
 
   const overlay_content = `
   <div id="overlaycss" style="position:absolute; top:0">
@@ -30,7 +30,6 @@ export const VideoJS = (props) => {
 
       const player = (playerRef.current = videojs(videoElement, options, () => {
         videojs.log("player is ready");
-        onReady && onReady(player);
       }));
 
       player.on("userinactive", () => {

@@ -21,23 +21,10 @@ const page = () => {
     ],
   };
 
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
-
-    // You can handle player events here, for example:
-    player.on("waiting", () => {
-      console.log("player is waiting");
-    });
-
-    player.on("dispose", () => {
-      console.log("player will dispose");
-    });
-  };
-
   return (
     <div className="p-[100px]">
       <div style={{ height: "500px", width: "500px" }}>
-        <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+        <VideoJS options={videoJsOptions} />
       </div>
     </div>
   );
